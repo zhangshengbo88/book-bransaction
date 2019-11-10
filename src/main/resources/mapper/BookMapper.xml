@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.bookbransaction.mapper.BookMapper">
+  <resultMap id="BaseResultMap" type="com.example.bookbransaction.entity.Book">
+    <id column="isbn" jdbcType="INTEGER" property="isbn" />
+    <result column="boot_name" jdbcType="VARCHAR" property="bootName" />
+    <result column="author_id" jdbcType="INTEGER" property="authorId" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="image_usl" jdbcType="VARCHAR" property="imageUsl" />
+    <result column="press_id" jdbcType="INTEGER" property="pressId" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="status" jdbcType="SMALLINT" property="status" />
+    <result column="type_id" jdbcType="INTEGER" property="typeId" />
+    <result column="describe" jdbcType="VARCHAR" property="describe" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from book
+    where isbn = #{isbn,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.example.bookbransaction.entity.Book">
+    <selectKey keyProperty="isbn" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into book (boot_name, author_id, user_id, 
+      image_usl, press_id, create_time, 
+      update_time, status, type_id, 
+      describe)
+    values (#{bootName,jdbcType=VARCHAR}, #{authorId,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, 
+      #{imageUsl,jdbcType=VARCHAR}, #{pressId,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{status,jdbcType=SMALLINT}, #{typeId,jdbcType=INTEGER}, 
+      #{describe,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.example.bookbransaction.entity.Book">
+    update book
+    set boot_name = #{bootName,jdbcType=VARCHAR},
+      author_id = #{authorId,jdbcType=INTEGER},
+      user_id = #{userId,jdbcType=INTEGER},
+      image_usl = #{imageUsl,jdbcType=VARCHAR},
+      press_id = #{pressId,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      status = #{status,jdbcType=SMALLINT},
+      type_id = #{typeId,jdbcType=INTEGER},
+      describe = #{describe,jdbcType=VARCHAR}
+    where isbn = #{isbn,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select isbn, boot_name, author_id, user_id, image_usl, press_id, create_time, update_time, 
+    status, type_id, describe
+    from book
+    where isbn = #{isbn,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select isbn, boot_name, author_id, user_id, image_usl, press_id, create_time, update_time, 
+    status, type_id, describe
+    from book
+  </select>
+</mapper>
