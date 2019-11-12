@@ -48,4 +48,10 @@
     update_time, status
     from shop
   </select>
+    <select id="selectByUserId" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+      select shop_id, user_id, shop_name, shop_address, business_license_image, create_time,
+    update_time, status
+    from shop
+    where user_id = #{userId,jdbcType=INTEGER}
+    </select>
 </mapper>

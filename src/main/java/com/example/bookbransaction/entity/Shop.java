@@ -25,7 +25,7 @@ public class Shop {
     private String shopName;
 
     /**
-     * 航电地址
+     * 商店地址
      */
     private String shopAddress;
 

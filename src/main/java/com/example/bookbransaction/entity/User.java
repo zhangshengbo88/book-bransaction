@@ -73,6 +73,10 @@ public class User {
      * 最后修改时间
      */
     private Date updateTime;
+    /**
+     * 当用户为商家时获取商店信息
+     */
+    private Shop shop;
 
     public Integer getId() {
         return id;
@@ -176,5 +180,13 @@ public class User {
 
     public void setUpdateTime(Date updateTime) {
         this.updateTime = updateTime;
+    }
+
+    public Shop getShop() {
+        return shop;
+    }
+
+    public void setShop(Shop shop) {
+        this.shop = shop;
     }
 }
