@@ -6,7 +6,7 @@ import java.util.Date;
  * 用户表
  *
  * @author Michael Chow
- * @date   2019/11/10
+ * @date   2019/11/12
  */
 public class User {
     /**
@@ -42,7 +42,7 @@ public class User {
     /**
      * 手机号
      */
-    private Integer phone;
+    private Long phone;
 
     /**
      * 邮箱
@@ -122,11 +122,11 @@ public class User {
         this.idNumber = idNumber;
     }
 
-    public Integer getPhone() {
+    public Long getPhone() {
         return phone;
     }
 
-    public void setPhone(Integer phone) {
+    public void setPhone(Long phone) {
         this.phone = phone;
     }
 

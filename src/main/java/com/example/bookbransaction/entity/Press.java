@@ -4,7 +4,7 @@ package com.example.bookbransaction.entity;
  * 出版社
  *
  * @author Michael Chow
- * @date   2019/11/10
+ * @date   2019/11/11
  */
 public class Press {
     /**

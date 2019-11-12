@@ -4,7 +4,7 @@ package com.example.bookbransaction.entity;
  * 联系人
  *
  * @author Michael Chow
- * @date   2019/11/10
+ * @date   2019/11/11
  */
 public class Contacts {
     /**

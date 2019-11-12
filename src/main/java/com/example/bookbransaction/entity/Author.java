@@ -6,7 +6,7 @@ import java.util.Date;
  * 作者信息
  *
  * @author Michael Chow
- * @date   2019/11/10
+ * @date   2019/11/11
  */
 public class Author {
     /**
@@ -43,6 +43,10 @@ public class Author {
      * 修改人
      */
     private Integer updateBy;
+    /**
+     * 作者所属区域
+     */
+    private Location location;
 
     public Integer getAuthorId() {
         return authorId;
@@ -98,5 +102,13 @@ public class Author {
 
     public void setUpdateBy(Integer updateBy) {
         this.updateBy = updateBy;
+    }
+
+    public Location getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
     }
 }

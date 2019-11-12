@@ -18,7 +18,7 @@
         <property name="xmlFormatter" value="org.mybatis.generator.api.dom.DefaultXmlFormatter"/>
 
         <!-- 自定义注释生成器 -->
-        <commentGenerator type="custom.mybatis.mbgcomment.MySQLCommentGenerator">
+        <commentGenerator type="mybatis.mbgcomment.MySQLCommentGenerator">
             <property name="author" value="Michael Chow"/>
             <property name="dateFormat" value="yyyy/MM/dd"/>
         </commentGenerator>
@@ -45,31 +45,31 @@
         </javaClientGenerator>
 
         <!-- 设置数据库的表名和实体类名 -->
-        <table tableName="user" domainObjectName="User">
-            <!-- generatedKey用于生成生成主键的方法 -->
-            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
-        </table>
-        <table tableName="user_address" domainObjectName="UserAddress"><generatedKey column="id" sqlStatement="MySql" identity="true"/></table>
-        <table tableName="user_mark" domainObjectName="UserMark"><generatedKey column="id" sqlStatement="MySql" identity="true"/></table>
-        <table tableName="book_type" domainObjectName="BookType"><generatedKey column="type_id" sqlStatement="MySql" identity="true"/></table>
-        <table tableName="press" domainObjectName="Press"><generatedKey column="press_id" sqlStatement="MySql" identity="true"/></table>
-        <table tableName="author" domainObjectName="Author"><generatedKey column="author_id" sqlStatement="MySql" identity="true"/></table>
-        <table tableName="book" domainObjectName="Book"><generatedKey column="isbn" sqlStatement="MySql" identity="true"/></table>
-        <table tableName="location" domainObjectName="Location"><generatedKey column="id" sqlStatement="MySql" identity="true"/></table>
-        <table tableName="shopping_cart" domainObjectName="ShoppingCart"></table>
-        <table tableName="order" domainObjectName="Order"><generatedKey column="order_no" sqlStatement="MySql" identity="true"/></table>
-        <table tableName="comment" domainObjectName="Comment"><generatedKey column="order_id" sqlStatement="MySql" identity="true"/></table>
-        <table tableName="account" domainObjectName="Account"><generatedKey column="user_id" sqlStatement="MySql" identity="true"/></table>
-        <table tableName="transaction_details" domainObjectName="TransactionDetails"><generatedKey column="id" sqlStatement="MySql" identity="true"/></table>
-        <table tableName="coupon" domainObjectName="Coupon"><generatedKey column="id" sqlStatement="MySql" identity="true"/></table>
-        <table tableName="user_coupon" domainObjectName="UserCoupon"><generatedKey column="id" sqlStatement="MySql" identity="true"/></table>
-        <table tableName="contacts" domainObjectName="Contacts"></table>
-        <table tableName="chat_record" domainObjectName="ChatRecord"></table>
-        <table tableName="shop" domainObjectName="Shop"><generatedKey column="shop_id" sqlStatement="MySql" identity="true"/></table>
-        <table tableName="bookshop" domainObjectName="Bookshop"></table>
-        <table tableName="sys_user" domainObjectName="SysUser"><generatedKey column="id" sqlStatement="MySql" identity="true"/></table>
-        <table tableName="sys_model" domainObjectName="SysModel"><generatedKey column="id" sqlStatement="MySql" identity="true"/></table>
-        <table tableName="sys_role" domainObjectName="SysRole"><generatedKey column="id" sqlStatement="MySql" identity="true"/></table>
+        <!--<table tableName="user" domainObjectName="User">
+            &lt;!&ndash; generatedKey用于生成生成主键的方法 &ndash;&gt;
+            <generatedKey column="id" sqlStatement="MySql"/>
+        </table>-->
+        <!--<table tableName="user_address" domainObjectName="UserAddress"><generatedKey column="id" sqlStatement="MySql"/></table>-->
+        <!--<table tableName="user_mark" domainObjectName="UserMark"><generatedKey column="id" sqlStatement="MySql"/></table>-->
+        <!--<table tableName="book_type" domainObjectName="BookType"><generatedKey column="type_id" sqlStatement="MySql"/></table>-->
+        <!--<table tableName="press" domainObjectName="Press"><generatedKey column="press_id" sqlStatement="MySql"/></table>-->
+        <!--<table tableName="author" domainObjectName="Author"><generatedKey column="author_id" sqlStatement="MySql"/></table>-->
+        <!--<table tableName="book" domainObjectName="Book"><generatedKey column="isbn" sqlStatement="MySql"/></table>-->
+        <!--<table tableName="location" domainObjectName="Location"><generatedKey column="id" sqlStatement="MySql"/></table>-->
+        <!--<table tableName="shopping_cart" domainObjectName="ShoppingCart"></table>-->
+        <!--<table tableName="order" domainObjectName="Order"><generatedKey column="order_no" sqlStatement="MySql"/></table>-->
+        <!--<table tableName="comment" domainObjectName="Comment"><generatedKey column="order_id" sqlStatement="MySql"/></table>-->
+        <!--<table tableName="account" domainObjectName="Account"><generatedKey column="user_id" sqlStatement="MySql"/></table>-->
+        <!--<table tableName="transaction_details" domainObjectName="TransactionDetails"><generatedKey column="id" sqlStatement="MySql"/></table>-->
+        <!--<table tableName="coupon" domainObjectName="Coupon"><generatedKey column="id" sqlStatement="MySql"/></table>-->
+        <!--<table tableName="user_coupon" domainObjectName="UserCoupon"><generatedKey column="id" sqlStatement="MySql"/></table>-->
+        <!--<table tableName="contacts" domainObjectName="Contacts"></table>-->
+        <!--<table tableName="chat_record" domainObjectName="ChatRecord"></table>-->
+        <!--<table tableName="shop" domainObjectName="Shop"><generatedKey column="shop_id" sqlStatement="MySql"/></table>-->
+        <!--<table tableName="bookshop" domainObjectName="Bookshop"></table>-->
+        <!--<table tableName="sys_user" domainObjectName="SysUser"><generatedKey column="id" sqlStatement="MySql"/></table>-->
+        <!--<table tableName="sys_model" domainObjectName="SysModel"><generatedKey column="id" sqlStatement="MySql"/></table>-->
+        <!--<table tableName="sys_role" domainObjectName="SysRole"><generatedKey column="id" sqlStatement="MySql"/></table>-->
 
     </context>
 

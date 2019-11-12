@@ -6,13 +6,18 @@ import java.util.Date;
  * 图书表
  *
  * @author Michael Chow
- * @date   2019/11/10
+ * @date   2019/11/12
  */
 public class Book {
     /**
+     * 
+     */
+    private Integer id;
+
+    /**
      * 书号
      */
-    private Integer isbn;
+    private Long isbn;
 
     /**
      * 图书名称
@@ -62,13 +67,34 @@ public class Book {
     /**
      * 描述
      */
-    private String describe;
+    private String bookDescribe;
 
-    public Integer getIsbn() {
+    /**
+     *  图书类型
+     */
+    private BookType bookType;
+    /**
+     * 出版社
+     */
+    private Press press;
+    /**
+     * 作者
+     */
+    private Author author;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public Long getIsbn() {
         return isbn;
     }
 
-    public void setIsbn(Integer isbn) {
+    public void setIsbn(Long isbn) {
         this.isbn = isbn;
     }
 
@@ -144,11 +170,35 @@ public class Book {
         this.typeId = typeId;
     }
 
-    public String getDescribe() {
-        return describe;
+    public String getBookDescribe() {
+        return bookDescribe;
     }
 
-    public void setDescribe(String describe) {
-        this.describe = describe;
+    public void setBookDescribe(String bookDescribe) {
+        this.bookDescribe = bookDescribe;
+    }
+
+    public BookType getBookType() {
+        return bookType;
+    }
+
+    public void setBookType(BookType bookType) {
+        this.bookType = bookType;
+    }
+
+    public Press getPress() {
+        return press;
+    }
+
+    public void setPress(Press press) {
+        this.press = press;
+    }
+
+    public Author getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(Author author) {
+        this.author = author;
     }
 }

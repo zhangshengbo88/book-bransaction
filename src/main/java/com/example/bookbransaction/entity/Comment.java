@@ -6,7 +6,7 @@ import java.util.Date;
  * 评论表
  *
  * @author Michael Chow
- * @date   2019/11/10
+ * @date   2019/11/11
  */
 public class Comment {
     /**

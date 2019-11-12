@@ -4,7 +4,7 @@ package com.example.bookbransaction.entity;
  * 国家及地区信息
  *
  * @author Michael Chow
- * @date   2019/11/10
+ * @date   2019/11/11
  */
 public class Location {
     /**
