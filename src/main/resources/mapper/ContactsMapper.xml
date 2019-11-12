@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.bookbransaction.mapper.ContactsMapper">
+  <resultMap id="BaseResultMap" type="com.example.bookbransaction.entity.Contacts">
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="contact_id" jdbcType="INTEGER" property="contactId" />
+  </resultMap>
+  <insert id="insert" parameterType="com.example.bookbransaction.entity.Contacts">
+    insert into contacts (user_id, contact_id)
+    values (#{userId,jdbcType=INTEGER}, #{contactId,jdbcType=INTEGER})
+  </insert>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select user_id, contact_id
+    from contacts
+  </select>
+</mapper>
