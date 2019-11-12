@@ -63,4 +63,25 @@
     update_time, status, type_id, book_describe
     from book
   </select>
+  <select id="selectByParam" parameterType="com.example.bookbransaction.entity.Book" resultMap="BaseResultMap">
+    select id, isbn, boot_name, author_id, user_id, image_usl, press_id, create_time,
+    update_time, status, type_id, book_describe
+    from book
+    <where>
+      status = 1
+      <if test="isbn != null">
+        and isbn = #{isbn,jdbcType=BIGINT}
+      </if>
+      <if test="bootName != null">
+        and boot_name like CONCAT('%',#{bootName,jdbcType=VARCHAR},'%')
+      </if>
+      <if test="authorId != null">
+        and author_id = #{authorId,jdbcType=INTEGER}
+      </if>
+      <if test="pressId != null">
+        and  press_id = #{pressId,jdbcType=INTEGER}
+      </if>
+    </where>
+    order by id
+  </select>
 </mapper>

@@ -30,4 +30,9 @@
     select press_id, press_name
     from press
   </select>
+  <select id="selectByName" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select press_id, press_name
+    from press
+    where press_name like CONCAT('%',#{name,jdbcType=VARCHAR},'%')
+  </select>
 </mapper>

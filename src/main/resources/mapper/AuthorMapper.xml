@@ -47,4 +47,10 @@
     update_by
     from author
   </select>
+  <select id="selectByName" parameterType="java.lang.String" resultMap="BaseResultMap">
+     select author_id, author_name, location_id, create_time, create_by, update_time,
+    update_by
+    from author
+    where author_name like CONCAT('%',#{name,jdbcType=VARCHAR},'%')
+  </select>
 </mapper>

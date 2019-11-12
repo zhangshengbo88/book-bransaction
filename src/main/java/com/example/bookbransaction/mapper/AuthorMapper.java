@@ -15,4 +15,6 @@ public interface AuthorMapper {
     List<Author> selectAll();
 
     int updateByPrimaryKey(Author record);
+
+    Author selectByName(String name);
 }

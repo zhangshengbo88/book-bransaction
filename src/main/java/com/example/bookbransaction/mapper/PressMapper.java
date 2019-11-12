@@ -15,4 +15,6 @@ public interface PressMapper {
     List<Press> selectAll();
 
     int updateByPrimaryKey(Press record);
+
+    Press selectByName(String name);
 }

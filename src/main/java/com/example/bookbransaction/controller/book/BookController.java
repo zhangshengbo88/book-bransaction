@@ -1,8 +1,12 @@
 package com.example.bookbransaction.controller.book;
 
+import com.example.bookbransaction.entity.Author;
 import com.example.bookbransaction.entity.Book;
+import com.example.bookbransaction.entity.BookType;
+import com.example.bookbransaction.entity.Press;
 import com.example.bookbransaction.model.base.Page;
 import com.example.bookbransaction.model.base.Result;
+import com.example.bookbransaction.model.book.BookRequest;
 import com.example.bookbransaction.service.book.BookService;
 import com.example.bookbransaction.utils.BaseUtil;
 import com.github.pagehelper.PageInfo;
@@ -11,6 +15,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 @RestController
 @RequestMapping("book")
@@ -23,9 +28,9 @@ public class BookController {
      * @return
      */
     @ResponseBody
-    @RequestMapping(value = "getList",method = {RequestMethod.POST})
-    public Result getBookList(@RequestBody Page page){
-        PageInfo<Book> pages =  bookService.getList(page);
+    @RequestMapping(value = "getBookList",method = {RequestMethod.POST})
+    public Result getBookList(@RequestBody BookRequest bookRequest){
+        PageInfo<Book> pages =  bookService.getList(bookRequest);
         Result result = Result.success(pages.getList());
         result.setPage(BaseUtil.buildPage(pages));
         return result;
@@ -87,5 +92,40 @@ public class BookController {
             return Result.fail(e.getMessage());
         }
         return Result.success();
+    }
+
+    /**
+     * 通过作者名字匹配获取作者信息
+     * @param name
+     * @return
+     */
+    @ResponseBody
+    @RequestMapping(value = "getAuthorByName",method = {RequestMethod.POST})
+    public Result getAuthorByName(@RequestBody String name){
+        Author author = bookService.getAuthorByName(name);
+        return  Result.success(author);
+    }
+
+    /**
+     * 通过出版社名字匹配获取作者信息
+     * @param name
+     * @return
+     */
+    @ResponseBody
+    @RequestMapping(value = "getPressByName",method = {RequestMethod.POST})
+    public Result getPressByName(@RequestBody String name){
+        Press press = bookService.getPressByName(name);
+        return  Result.success(press);
+    }
+
+    /**
+     * 获取图书类型
+     * @return
+     */
+    @ResponseBody
+    @RequestMapping(value = "getBookType",method = {RequestMethod.POST})
+    public Result getBookType(){
+        List<BookType> press = bookService.getBookTypes();
+        return  Result.success(press);
     }
 }
